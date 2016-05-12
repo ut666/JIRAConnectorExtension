@@ -137,7 +137,7 @@ class JIRARestApiWrapper{
 
 		if (!is_null($this->userName)) {
 			//Encode credentials as base 64.
-			$credentialsEncoded = base64_encode( $this->userName . ":" . $this->userPassword );			
+			$credentialsEncoded = "Authorization: Basic" . base64_encode( $this->userName . ":" . $this->userPassword );			
 			$headers[] = $credentialsEncoded;
 		}
 
